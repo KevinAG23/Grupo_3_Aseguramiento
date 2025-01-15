@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+</head>
+<body>
+    <h1>Lista de Proveedores</h1>
+    <a href="/add_proveedor">Agregar Proveedor</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Empresa</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in proveedores %}
+            <tr>
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.name }}</td>
+                <td>{{ proveedor.email }}</td>
+                <td>{{ proveedor.phone }}</td>
+                <td>{{ proveedor.address }}</td>
+                <td>{{ proveedor.company_name }}</td>
+                <td>
+                    <a href="/edit_proveedor/{{ proveedor.id }}">Editar</a> |
+                    <a href="/delete_proveedor/{{ proveedor.id }}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Volver</a>
+</body>
+</html>

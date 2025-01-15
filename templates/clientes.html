@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <a href="/add_cliente">Agregar Cliente</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.name }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.phone }}</td>
+                <td>
+                    <a href="/edit_cliente/{{ cliente.id }}">Editar</a> |
+                    <a href="/delete_cliente/{{ cliente.id }}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Volver</a>
+</body>
+</html>

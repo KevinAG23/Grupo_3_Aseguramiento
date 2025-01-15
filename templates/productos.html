@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Lista de Productos</h1>
+    <a href="/add_producto">Agregar Producto</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Proveedor</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.name }}</td>
+                <td>{{ producto.description }}</td>
+                <td>{{ producto.price }}</td>
+                <td>{{ producto.stock }}</td>
+                <td>{{ producto.provider_name }}</td>
+                <td>
+                    <a href="/edit_producto/{{ producto.id }}">Editar</a> |
+                    <a href="/delete_producto/{{ producto.id }}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Volver</a>
+</body>
+</html>

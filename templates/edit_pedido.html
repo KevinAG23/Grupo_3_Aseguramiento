@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pedido</title>
+</head>
+<body>
+    <h1>Editar Pedido</h1>
+    <form action="/edit_pedido/{{ pedido[0] }}" method="post">
+        <label for="client_id">Cliente:</label>
+        <select id="client_id" name="client_id" required>
+            {% for client in clients %}
+            <option value="{{ client[0] }}" {% if client[0] == pedido[1] %}selected{% endif %}>
+                {{ client[1] }}
+            </option>
+            {% endfor %}
+        </select><br>
+
+        <label for="product_id">Producto:</label>
+        <select id="product_id" name="product_id" required>
+            {% for product in products %}
+            <option value="{{ product[0] }}" {% if product[0] == pedido[2] %}selected{% endif %}>
+                {{ product[1] }}
+            </option>
+            {% endfor %}
+        </select><br>
+
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" name="quantity" value="{{ pedido[3] }}" min="1" required><br>
+
+        <label for="order_date">Fecha del Pedido:</label>
+        <input type="date" id="order_date" name="order_date" value="{{ pedido[4] }}" required><br>
+
+        <button type="submit">Actualizar Pedido</button>
+    </form>
+    <a href="/pedidos">Volver</a>
+</body>
+</html>
