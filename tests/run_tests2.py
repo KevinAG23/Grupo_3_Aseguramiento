@@ -10,8 +10,8 @@ import os
 
 if __name__ == "__main__":
     # Ruta de los features y del archivo JSON de salida
-    features_path = "tests/features"
-    report_file = "report.json"
+    features_path = "tests/features2"
+    report_file = "report2.json"
 
     # Ejecutar behave con opciones para generar el reporte JSON
     status = behave_main(f"{features_path} --format json --outfile {report_file}")
