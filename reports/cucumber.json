@@ -1,0 +1,328 @@
+[
+{
+  "description": [
+    "Como usuario",
+    "Quiero gestionar clientes",
+    "Para mantener la informaci\u00f3n actualizada"
+  ],
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features4/clientes.feature:6",
+      "name": "Agregar un cliente",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features4/clientes.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "page",
+                "value": "add cliente"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:3"
+          },
+          "name": "estoy en la p\u00e1gina \"add cliente\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features4/clientes.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "field",
+                "value": "name"
+              },
+              {
+                "name": "value",
+                "value": "John Doe"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:8"
+          },
+          "name": "completo el campo \"name\" con \"John Doe\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features4/clientes.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "field",
+                "value": "email"
+              },
+              {
+                "name": "value",
+                "value": "john@example.com"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:8"
+          },
+          "name": "completo el campo \"email\" con \"john@example.com\"",
+          "result": {
+            "duration": 0.005930423736572266,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features4/clientes.feature:10",
+          "match": {
+            "arguments": [
+              {
+                "name": "field",
+                "value": "phone"
+              },
+              {
+                "name": "value",
+                "value": "123456789"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:8"
+          },
+          "name": "completo el campo \"phone\" con \"123456789\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features4/clientes.feature:11",
+          "match": {
+            "arguments": [
+              {
+                "name": "button",
+                "value": "Add"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:15"
+          },
+          "name": "hago clic en \"Add\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features4/clientes.feature:12",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Cliente agregado exitosamente"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:28"
+          },
+          "name": "deber\u00eda ver \"Cliente agregado exitosamente\"",
+          "result": {
+            "duration": 0.004099607467651367,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features4/clientes.feature:14",
+      "name": "Editar un cliente existente",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features4/clientes.feature:15",
+          "match": {
+            "arguments": [
+              {
+                "name": "client_id",
+                "value": "1"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:34"
+          },
+          "name": "existe un cliente con id 1",
+          "result": {
+            "duration": 0.001561880111694336,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features4/clientes.feature:16",
+          "match": {
+            "arguments": [
+              {
+                "name": "client_id",
+                "value": "1"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:39"
+          },
+          "name": "voy a la p\u00e1gina de edici\u00f3n del cliente con id 1",
+          "result": {
+            "duration": 0.001554727554321289,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features4/clientes.feature:17",
+          "match": {
+            "arguments": [
+              {
+                "name": "field",
+                "value": "name"
+              },
+              {
+                "name": "value",
+                "value": "Jane Doe"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:45"
+          },
+          "name": "actualizo el campo \"name\" con \"Jane Doe\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features4/clientes.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "name": "button",
+                "value": "Save"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:15"
+          },
+          "name": "hago clic en \"Save\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features4/clientes.feature:19",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Cliente actualizado exitosamente"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:28"
+          },
+          "name": "deber\u00eda ver \"Cliente actualizado exitosamente\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features4/clientes.feature:21",
+      "name": "Eliminar un cliente",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features4/clientes.feature:22",
+          "match": {
+            "arguments": [
+              {
+                "name": "client_id",
+                "value": "1"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:34"
+          },
+          "name": "existe un cliente con id 1",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features4/clientes.feature:23",
+          "match": {
+            "arguments": [
+              {
+                "name": "client_id",
+                "value": "1"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:50"
+          },
+          "name": "hago clic en \"Delete\" para el cliente con id 1",
+          "result": {
+            "duration": 0.0007185935974121094,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features4/clientes.feature:24",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Cliente eliminado exitosamente"
+              }
+            ],
+            "location": "features4/steps/clientes_steps.py:28"
+          },
+          "name": "deber\u00eda ver \"Cliente eliminado exitosamente\"",
+          "result": {
+            "duration": 0.0,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features4/clientes.feature:1",
+  "name": "CRUD de Clientes",
+  "status": "passed",
+  "tags": []
+}
+]
